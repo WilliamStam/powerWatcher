@@ -1,0 +1,12 @@
+/config.py
+config copy.py
+config_prod.py
+venv/
+venv
+/logs/
+__pycache__/
+
+/temp/
+.VSCodeCounter
+.idea/
+

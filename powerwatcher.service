@@ -1,0 +1,18 @@
+[Unit]
+Description=PowerWatcher Service
+After=multi-user.target
+Conflicts=getty@tty1.service
+[Service]
+RemainAfterExit=yes
+Type=simple
+ExecStart=/home/william/.virtualenvs/powerWatcher/bin/python -u /opt/powerWatcher/main.py
+RestartSec=1000ms
+StandardInput=tty-force
+StandardOutput=file:/opt/powerWatcher/log.log
+StandardError=file:/opt/powerWatcher/log.log
+SyslogIdentifier=PowerWatcher
+Environment=PYTHONUNBUFFERED=1
+Restart=always
+RuntimeMaxSec=86400
+[Install]
+WantedBy=multi-user.target
